@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Avocado">
+  <title>Avocado</title>
+  <rect width="128" height="128" fill="#fff"/>
+  <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M64 32q-12 0-18 18L35 75q-6 25 29 27 35-2 29-27L82 50Q76 32 64 32Z"/><circle cx="64" cy="76" r="13" fill="#111"/><path d="M64 32q-3-10 6-15" fill="none" stroke="#111" stroke-width="4"/></g>
+</svg>

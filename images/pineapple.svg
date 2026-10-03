@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Pineapple">
+  <title>Pineapple</title>
+  <rect width="128" height="128" fill="#fff"/>
+  <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M64 43 45 52l8 12-10 8 11 11-5 12 15 8 15-8-5-12 11-11-10-8 8-12Z"/><path d="M64 44Q45 33 48 19q14 4 17 23m0 1q1-24 16-28 3 17-14 30m-3-2q-2-22-15-28"/><path d="m52 54 25 39m0-39L52 93M47 68h34m-30 17h25" fill="none" stroke="#111" stroke-width="3"/></g>
+</svg>

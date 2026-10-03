@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Cucumber">
+  <title>Cucumber</title>
+  <rect width="128" height="128" fill="#fff"/>
+  <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M43 34q21-8 42 0 10 31 0 64-21 8-42 0-10-33 0-64Z"/><path d="M48 45h32m-34 14h36m-35 15h34m-31 14h27" fill="none" stroke="#111" stroke-width="2"/><g fill="#111"><circle cx="54" cy="52" r="2"/><circle cx="70" cy="67" r="2"/><circle cx="58" cy="84" r="2"/></g></g>
+</svg>

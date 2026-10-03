@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Blueberry">
+  <title>Blueberry</title>
+  <rect width="128" height="128" fill="#fff"/>
+  <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="64" cy="67" r="28"/><path d="m53 43 5 8 6-7 6 7 7-7 2 10-9 5-11-2-9 3Z" fill="#111"/><path d="M52 67q12-11 24 0" fill="none" stroke="#111" stroke-width="3"/></g>
+</svg>

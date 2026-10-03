@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Coconut">
+  <title>Coconut</title>
+  <rect width="128" height="128" fill="#fff"/>
+  <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="64" cy="66" r="32"/><path d="M47 47q12-9 21 0m-17 38q12 8 26 0" fill="none" stroke="#111" stroke-width="4"/><circle cx="55" cy="61" r="3" fill="#111"/><circle cx="72" cy="60" r="3" fill="#111"/><circle cx="64" cy="72" r="3" fill="#111"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Banana">
+  <title>Banana</title>
+  <rect width="128" height="128" fill="#fff"/>
+  <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M38 35q20 39 52 44 8 2 15-2-7 26-31 31-25 4-44-25-16-24-8-44 7-11 16-4Z"/><path d="M38 35l-9-6m76 48 5 8" fill="none" stroke="#111" stroke-width="5"/></g>
+</svg>

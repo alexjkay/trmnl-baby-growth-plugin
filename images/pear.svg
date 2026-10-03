@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Pear">
+  <title>Pear</title>
+  <rect width="128" height="128" fill="#fff"/>
+  <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M64 33q-13 0-12 18 0 9-10 22-18 25 4 35 18 8 36 0 22-10 4-35-10-13-10-23 1-17-12-17Z"/><path d="M64 34q-3-12 7-17" fill="none" stroke="#111" stroke-width="4"/></g>
+</svg>
