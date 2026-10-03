@@ -1,0 +1,26 @@
+<div class="layout layout--row layout--center gap--large">
+  {% if date_valid == false %}
+    <span class="title">Set your due date (DD/MM/YYYY)</span>
+  {% elsif status == "born" %}
+    <span class="value value--large">Baby has arrived!</span>
+  {% else %}
+    <div class="item">
+      <div class="content">
+        <span class="label">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %}{% endif %} - size of {{ size_article }}</span>
+        <span class="value value--large">{{ size_object | capitalize }}</span>
+        <span class="description">{{ size_length }} - {{ size_weight }}</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content">
+        <span class="value value--xxlarge value--tnums">{{ count_value }}</span>
+        <span class="label">{{ count_label }}</span>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<div class="title_bar">
+  <span class="title">Baby Growth</span>
+  <span class="instance">{% if date_valid %}Due {{ due_label }}{% endif %}</span>
+</div>

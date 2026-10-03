@@ -1,0 +1,117 @@
+{% comment %}
+  Baby growth calculations shared by every layout.
+
+  Input:  trmnl.plugin_settings.custom_fields_values.due_date (DD/MM/YYYY)
+  Output: date_valid, status (early | pregnant | due | overdue | born),
+          days_left, weeks_left, days_rem, weeks_word, days_word, preg_week, preg_day, trimester,
+          progress_pct, due_label, count_value, count_label, size_article,
+          size_object, size_length, size_weight
+{% endcomment %}
+
+{% comment %} week|object|length (cm)|weight (g) - length is crown-rump to week 19, crown-heel from week 20 {% endcomment %}
+{% assign size_table = "4|poppy seed|0.1|0;5|sesame seed|0.2|0;6|lentil|0.6|0;7|blueberry|1.3|0;8|raspberry|1.6|1;9|cherry|2.3|2;10|strawberry|3.1|4;11|fig|4.1|7;12|lime|5.4|14;13|lemon|7.4|23;14|peach|8.7|43;15|apple|10.1|70;16|avocado|11.6|100;17|pear|13.0|140;18|bell pepper|14.2|190;19|mango|15.3|240;20|banana|25.6|300;21|carrot|26.7|360;22|sweet potato|27.8|430;23|grapefruit|28.9|501;24|cantaloupe|30.0|600;25|cauliflower|34.6|660;26|lettuce|35.6|760;27|cabbage|36.6|875;28|aubergine|37.6|1005;29|butternut squash|38.6|1153;30|cucumber|39.9|1319;31|coconut|41.1|1502;32|jicama|42.4|1702;33|pineapple|43.7|1918;34|honeydew melon|45.0|2146;35|bunch of Swiss chard|46.2|2383;36|papaya|47.4|2622;37|winter melon|48.6|2859;38|leek|49.8|3083;39|watermelon|50.7|3288;40|pumpkin|51.2|3462" | split: ";" %}
+
+{% assign tz = trmnl.user.time_zone_iana | default: "Etc/UTC" %}
+{% assign today_iso = 0 | days_ago: tz | date: "%Y-%m-%d" %}
+{% assign today_s = today_iso | date: "%s" | plus: 0 %}
+
+{% assign due_raw = trmnl.plugin_settings.custom_fields_values.due_date | default: "" | strip | replace: "-", "/" | replace: ".", "/" %}
+{% assign due_parts = due_raw | split: "/" %}
+{% assign date_valid = false %}
+
+{% if due_parts.size == 3 %}
+  {% assign due_d = due_parts[0] | strip | plus: 0 %}
+  {% assign due_m = due_parts[1] | strip | plus: 0 %}
+  {% assign due_y = due_parts[2] | strip | plus: 0 %}
+  {% if due_d >= 1 and due_d <= 31 and due_m >= 1 and due_m <= 12 and due_y >= 2000 and due_y <= 2100 %}
+    {% capture due_iso %}{{ due_y }}-{{ due_m }}-{{ due_d }}{% endcapture %}
+    {% comment %} Round-trip the date so impossible dates such as 31/02 are rejected {% endcomment %}
+    {% assign due_check = due_iso | date: "%-d/%-m/%Y" %}
+    {% capture due_expected %}{{ due_d }}/{{ due_m }}/{{ due_y }}{% endcapture %}
+    {% if due_check == due_expected %}
+      {% assign date_valid = true %}
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+{% if date_valid %}
+  {% assign due_s = due_iso | date: "%s" | plus: 0 %}
+  {% assign due_label = due_iso | date: "%-d %B %Y" %}
+
+  {% comment %} Adding 12 hours before dividing absorbs daylight-saving shifts {% endcomment %}
+  {% assign days_left = due_s | minus: today_s | plus: 43200 | divided_by: 86400 %}
+  {% assign days_overdue = 0 | minus: days_left %}
+  {% assign weeks_left = days_left | divided_by: 7 %}
+  {% assign days_rem = days_left | modulo: 7 %}
+  {% if weeks_left == 1 %}{% assign weeks_word = "week" %}{% else %}{% assign weeks_word = "weeks" %}{% endif %}
+  {% if days_rem == 1 %}{% assign days_word = "day" %}{% else %}{% assign days_word = "days" %}{% endif %}
+
+  {% comment %} A pregnancy is counted as 280 days (40 weeks) ending on the due date {% endcomment %}
+  {% assign preg_days = 280 | minus: days_left %}
+  {% assign preg_week = preg_days | divided_by: 7 %}
+  {% assign preg_day = preg_days | modulo: 7 %}
+
+  {% if days_left > 280 %}
+    {% assign status = "early" %}
+  {% elsif days_left > 0 %}
+    {% assign status = "pregnant" %}
+  {% elsif days_left == 0 %}
+    {% assign status = "due" %}
+  {% elsif days_overdue <= 14 %}
+    {% assign status = "overdue" %}
+  {% else %}
+    {% assign status = "born" %}
+  {% endif %}
+
+  {% case status %}
+    {% when "early", "pregnant" %}
+      {% assign count_value = days_left %}
+      {% if days_left == 1 %}{% assign count_label = "day to go" %}{% else %}{% assign count_label = "days to go" %}{% endif %}
+    {% when "due" %}
+      {% assign count_value = "0" %}
+      {% assign count_label = "days to go - due today!" %}
+    {% when "overdue" %}
+      {% assign count_value = days_overdue %}
+      {% if days_overdue == 1 %}{% assign count_label = "day overdue" %}{% else %}{% assign count_label = "days overdue" %}{% endif %}
+    {% else %}
+      {% assign count_value = days_overdue %}
+      {% assign count_label = "days since due date" %}
+  {% endcase %}
+
+  {% if preg_week < 14 %}
+    {% assign trimester = "1st trimester" %}
+  {% elsif preg_week < 28 %}
+    {% assign trimester = "2nd trimester" %}
+  {% else %}
+    {% assign trimester = "3rd trimester" %}
+  {% endif %}
+
+  {% assign progress_pct = preg_days | times: 100 | divided_by: 280 | at_least: 0 | at_most: 100 %}
+
+  {% assign size_week = preg_week | at_least: 4 | at_most: 40 %}
+  {% assign size_index = size_week | minus: 4 %}
+  {% assign size_row = size_table[size_index] | split: "|" %}
+  {% assign size_object = size_row[1] %}
+  {% assign size_length = size_row[2] | append: " cm" %}
+  {% assign size_weight_g = size_row[3] | plus: 0 %}
+
+  {% if preg_week < 4 %}
+    {% assign size_object = "tiny cluster of cells" %}
+    {% assign size_length = "under 0.1 cm" %}
+  {% endif %}
+
+  {% if size_weight_g < 1 %}
+    {% assign size_weight = "under 1 g" %}
+  {% elsif size_weight_g < 1000 %}
+    {% assign size_weight = size_weight_g | append: " g" %}
+  {% else %}
+    {% assign size_weight = size_weight_g | divided_by: 1000.0 | round: 2 | append: " kg" %}
+  {% endif %}
+
+  {% assign size_initial = size_object | slice: 0 | downcase %}
+  {% if "aeiou" contains size_initial %}
+    {% assign size_article = "an" %}
+  {% else %}
+    {% assign size_article = "a" %}
+  {% endif %}
+{% endif %}
