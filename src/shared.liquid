@@ -105,7 +105,7 @@
   {% elsif size_weight_g < 1000 %}
     {% assign size_weight = size_weight_g | append: " g" %}
   {% else %}
-    {% assign size_weight = size_weight_g | divided_by: 1000.0 | round: 2 | append: " kg" %}
+    {% assign size_weight = size_weight_g | divided_by: 1000.0 | round: 1 | append: " kg" %}
   {% endif %}
 
   {% assign size_initial = size_object | slice: 0 | downcase %}
