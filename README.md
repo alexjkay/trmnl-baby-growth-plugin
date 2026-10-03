@@ -7,6 +7,7 @@ Enter your due date (`DD/MM/YYYY`) and the screen shows, every day until the bab
 - a countdown of days (and weeks + days) until the due date
 - the current pregnancy week, day and trimester
 - an everyday object the baby is about the size of (poppy seed → pumpkin)
+- a high-contrast illustration of that object, linked to its image
 - the baby's approximate length and weight
 - a pregnancy progress bar
 
@@ -23,6 +24,7 @@ in your TRMNL account's time zone. Sizes are typical averages and are for fun, n
 .trmnlp.yml               # local preview config (sample due date)
 src/settings.yml          # plugin definition, including the "Due date" custom field
 src/shared.liquid         # date parsing, countdown and week-by-week size table
+images/                   # monochrome SVG illustrations for the size table
 src/full.liquid           # full-screen layout
 src/half_horizontal.liquid
 src/half_vertical.liquid
@@ -50,6 +52,9 @@ bin/trmnlp push    # creates the private plugin
 Then open the plugin in TRMNL, set **Due date** (e.g. `15/03/2027`) and add it to your playlist.
 After the first push, run `bin/trmnlp pull` so `src/settings.yml` records the plugin `id` and later pushes update it
 instead of creating a new plugin.
+
+The illustrations are loaded from this repository's `main` branch using raw GitHub URLs, so the repository must be
+public for TRMNL to fetch them. Each displayed illustration also links directly to its SVG file.
 
 Alternatively, create a Private Plugin in the TRMNL web UI and paste the contents of `src/shared.liquid` into the
 Shared markup tab, each layout file into its tab, and import the custom field from `src/settings.yml`.

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Raspberry">
+  <title>Raspberry</title>
+  <rect width="128" height="128" fill="#fff"/>
+  <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M48 53q2-13 15-10 11-8 18 4 14 2 10 17 8 14-5 24-20 13-40-1-12-11-3-22-3-7 5-12Z"/><g fill="#111"><circle cx="56" cy="56" r="4"/><circle cx="68" cy="53" r="4"/><circle cx="79" cy="58" r="4"/><circle cx="51" cy="67" r="4"/><circle cx="63" cy="66" r="4"/><circle cx="76" cy="69" r="4"/><circle cx="57" cy="79" r="4"/><circle cx="69" cy="81" r="4"/></g></g>
+</svg>

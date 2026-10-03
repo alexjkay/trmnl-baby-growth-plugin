@@ -6,6 +6,10 @@
     <span class="value">Baby has arrived!</span>
   {% else %}
     <span class="value value--large">{{ size_object | capitalize }}</span>
+    {% if size_image_url != "" %}
+      <a href="{{ size_image_url }}"><img src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="56" height="56"></a>
+      <a href="{{ size_image_url }}">View image</a>
+    {% endif %}
     <span class="description">{{ size_length }} - {{ size_weight }}</span>
     <span class="value value--tnums">{{ count_value }}</span>
     <span class="label label--small">{{ count_label }}</span>

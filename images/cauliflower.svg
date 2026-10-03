@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Cauliflower">
+  <title>Cauliflower</title>
+  <rect width="128" height="128" fill="#fff"/>
+  <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M39 65q-13-13 0-23 2-18 21-14 14-12 27 3 19-3 17 17 15 14-1 27-2 20-23 19-14 13-26-1-21 3-18-17-15-1-8-11Z"/><path d="m55 86-7 17h32l-8-17"/><circle cx="54" cy="54" r="5"/><circle cx="73" cy="47" r="6"/><circle cx="83" cy="65" r="5"/></g>
+</svg>

@@ -94,10 +94,14 @@
   {% assign size_object = size_row[1] %}
   {% assign size_length = size_row[2] | append: " cm" %}
   {% assign size_weight_g = size_row[3] | plus: 0 %}
+  {% assign size_image_url = "" %}
 
   {% if preg_week < 4 %}
     {% assign size_object = "tiny cluster of cells" %}
     {% assign size_length = "under 0.1 cm" %}
+  {% else %}
+    {% assign size_image = size_object | downcase | replace: " ", "-" | replace: "bunch-of-", "" %}
+    {% capture size_image_url %}https://raw.githubusercontent.com/alexjkay/trmnl-baby-growth-plugin/main/images/{{ size_image }}.svg{% endcapture %}
   {% endif %}
 
   {% if size_weight_g < 1 %}

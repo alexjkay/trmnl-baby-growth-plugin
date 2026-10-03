@@ -8,6 +8,10 @@
       <div class="content">
         <span class="label">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %}{% endif %} - size of {{ size_article }}</span>
         <span class="value value--large">{{ size_object | capitalize }}</span>
+        {% if size_image_url != "" %}
+          <a href="{{ size_image_url }}"><img src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="64" height="64"></a>
+          <a href="{{ size_image_url }}">View image</a>
+        {% endif %}
         <span class="description">{{ size_length }} - {{ size_weight }}</span>
       </div>
     </div>
