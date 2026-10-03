@@ -1,0 +1,23 @@
+#
+# Changes to this file will be overwritten by `trmnlp pull`.
+#
+# Docs: https://help.trmnl.com/en/articles/10542599-importing-and-exporting-private-plugins#h_581fb988f0
+#
+---
+strategy: static
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: '{}'
+polling_verb: get
+framework_version: latest
+polling_url: ''
+polling_headers: ''
+name: Baby Growth
+description: Daily baby size and due countdown
+refresh_interval: 60
+custom_fields:
+- keyname: due_date
+  field_type: string
+  name: Due date
+  description: Your due date in DD/MM/YYYY format, e.g. 15/03/2027
+  placeholder: DD/MM/YYYY
