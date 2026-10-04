@@ -10,10 +10,9 @@
       <div class="column">
         <span class="label">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %} - {{ trimester }}{% endif %}</span>
         <span class="description">Baby is the size of {{ size_article }}</span>
-        <span class="value value--xlarge">{{ size_object | capitalize }}</span>
+        <span class="value value--large" style="width: 100%; text-align: center;">{{ size_object | capitalize }}</span>
         {% if size_image_url != "" %}
-          <a href="{{ size_image_url }}"><img src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="96" height="96"></a>
-          <a href="{{ size_image_url }}">View image</a>
+          <a href="{{ size_image_url }}" style="align-self: center;"><img src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="96" height="96"></a>
         {% endif %}
         <div class="flex gap--large">
           <div class="item">
@@ -30,16 +29,16 @@
           </div>
         </div>
       </div>
-      <div class="column">
-        <span class="value value--xxxlarge value--tnums">{{ count_value }}</span>
-        <span class="label">{{ count_label }}</span>
+      <div class="column" style="align-self: stretch; align-items: center; justify-content: center; text-align: center; gap: 12px;">
+        <span class="value value--xxxlarge value--tnums" style="font-size: 160px; line-height: 1;">{{ count_value }}</span>
+        <span class="label" style="font-size: 24px; line-height: 28px;">{{ count_label }}</span>
         {% if status == "pregnant" or status == "early" %}
-          <span class="description">{{ weeks_left }} {{ weeks_word }}, {{ days_rem }} {{ days_word }}</span>
+          <span class="description" style="font-size: 18px; line-height: 24px;">{{ weeks_left }} {{ weeks_word }}, {{ days_rem }} {{ days_word }}</span>
         {% endif %}
-        <span class="description">Due {{ due_label }}</span>
+        <span class="description" style="font-size: 18px; line-height: 24px;">Due {{ due_label }}</span>
       </div>
     </div>
-    <div class="progress-bar">
+    <div class="progress-bar" style="width: 100%;">
       <div class="content">
         <span class="label">Pregnancy progress</span>
         <span class="label">{{ progress_pct }}%</span>

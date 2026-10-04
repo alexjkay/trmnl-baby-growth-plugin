@@ -1,25 +1,29 @@
-<div class="layout layout--row layout--center gap--large">
+<div class="layout layout--col layout--center" style="gap: 8px;">
   {% if date_valid == false %}
     <span class="title">Set your due date (DD/MM/YYYY)</span>
   {% elsif status == "born" %}
     <span class="value value--large">Baby has arrived!</span>
   {% else %}
-    <div class="item">
-      <div class="content">
-        <span class="label">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %}{% endif %} - size of {{ size_article }}</span>
-        <span class="value value--large">{{ size_object | capitalize }}</span>
+    <div class="columns" style="width: 100%; align-items: stretch;">
+      <div class="column" style="align-items: center; justify-content: center; text-align: center; gap: 4px;">
+        <span class="label label--small">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %}{% endif %} - size of {{ size_article }}</span>
+        <span class="value" style="font-size: 28px; line-height: 32px; white-space: normal;">{{ size_object | capitalize }}</span>
         {% if size_image_url != "" %}
-          <a href="{{ size_image_url }}"><img src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="64" height="64"></a>
-          <a href="{{ size_image_url }}">View image</a>
+          <a href="{{ size_image_url }}"><img src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="56" height="56"></a>
         {% endif %}
         <span class="description">{{ size_length }} - {{ size_weight }}</span>
       </div>
-    </div>
-    <div class="item">
-      <div class="content">
-        <span class="value value--xxlarge value--tnums">{{ count_value }}</span>
-        <span class="label">{{ count_label }}</span>
+      <div class="column" style="align-items: center; justify-content: center; text-align: center; gap: 8px;">
+        <span class="value value--tnums" style="font-size: 100px; line-height: 1;">{{ count_value }}</span>
+        <span class="label" style="font-size: 20px; line-height: 24px;">{{ count_label }}</span>
       </div>
+    </div>
+    <div class="progress-bar" style="width: 100%;">
+      <div class="content">
+        <span class="label label--small">Pregnancy progress</span>
+        <span class="label label--small">{{ progress_pct }}%</span>
+      </div>
+      <div class="track" style="height: 12px;"><div class="fill" style="width: {{ progress_pct }}%"></div></div>
     </div>
   {% endif %}
 </div>

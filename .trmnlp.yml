@@ -4,7 +4,7 @@ watch:
 - src
 - images
 custom_fields:
-  due_date: 01/10/2026
+  due_date: '08/06/2027'
 time_zone: Europe/London
 custom_filters:
 - - LocalImageFilter
