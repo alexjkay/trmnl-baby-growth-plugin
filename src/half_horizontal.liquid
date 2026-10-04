@@ -29,6 +29,6 @@
 </div>
 
 <div class="title_bar">
-  <span class="title">Baby Growth</span>
+  <span class="title">{{ display_title | escape }}</span>
   <span class="instance">{% if date_valid %}Due {{ due_label }}{% endif %}</span>
 </div>

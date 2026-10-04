@@ -21,3 +21,8 @@ custom_fields:
   name: Due date
   description: Your due date in DD/MM/YYYY format, e.g. 15/03/2027
   placeholder: DD/MM/YYYY
+- keyname: person_name
+  field_type: string
+  name: Person's name
+  description: Optional name for the title. Leave blank to use Baby Growth.
+  placeholder: Name

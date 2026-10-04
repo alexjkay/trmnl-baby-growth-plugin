@@ -9,20 +9,20 @@
     <div class="columns">
       <div class="column">
         <span class="label">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %} - {{ trimester }}{% endif %}</span>
-        <span class="description">Baby is the size of {{ size_article }}</span>
+        <span class="description">Your baby is the size of {{ size_article }}</span>
         <span class="value value--large" style="width: 100%; text-align: center;">{{ size_object | capitalize }}</span>
         {% if size_image_url != "" %}
           <a href="{{ size_image_url }}" style="align-self: center;"><img src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="96" height="96"></a>
         {% endif %}
-        <div class="flex gap--large">
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%;">
           <div class="item">
-            <div class="content">
+            <div class="content" style="width: 100%; align-items: center; text-align: center;">
               <span class="value value--small">{{ size_length }}</span>
               <span class="label label--small">Length</span>
             </div>
           </div>
           <div class="item">
-            <div class="content">
+            <div class="content" style="width: 100%; align-items: center; text-align: center;">
               <span class="value value--small">{{ size_weight }}</span>
               <span class="label label--small">Weight</span>
             </div>
@@ -51,6 +51,6 @@
 </div>
 
 <div class="title_bar">
-  <span class="title">Baby Growth</span>
+  <span class="title">{{ display_title | escape }}</span>
   <span class="instance">{% if date_valid %}Due {{ due_label }}{% endif %}</span>
 </div>

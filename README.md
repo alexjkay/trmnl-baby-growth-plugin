@@ -11,6 +11,9 @@ Enter your due date (`DD/MM/YYYY`) and the screen shows, every day until the bab
 - the baby's approximate length and weight
 - a pregnancy progress bar
 
+Optionally enter **Person's name** to personalize the title, e.g. `Alex's Baby Growth`.
+Leave it blank to keep `Baby Growth`. The personalized title appears in all four layouts.
+
 After the due date it switches to an "overdue" count for two weeks, then to a "Baby has arrived!" message.
 All four TRMNL layouts are supported (full, half horizontal, half vertical, quadrant).
 
