@@ -101,7 +101,11 @@
     {% assign size_length = "under 0.1 cm" %}
   {% else %}
     {% assign size_image = size_object | downcase | replace: " ", "-" | replace: "bunch-of-", "" %}
-    {% capture size_image_url %}https://raw.githubusercontent.com/alexjkay/trmnl-baby-growth-plugin/main/images/{{ size_image }}.svg{% endcapture %}
+    {% if local_preview %}
+      {% assign size_image_url = size_image | local_svg_data_url %}
+    {% else %}
+      {% capture size_image_url %}https://raw.githubusercontent.com/alexjkay/trmnl-baby-growth-plugin/main/images/{{ size_image }}.svg{% endcapture %}
+    {% endif %}
   {% endif %}
 
   {% if size_weight_g < 1 %}

@@ -2,8 +2,13 @@
 watch:
 - ".trmnlp.yml"
 - src
+- images
 custom_fields:
-  due_date: 15/01/2027
+  due_date: 01/10/2026
 time_zone: Europe/London
+custom_filters:
+- - LocalImageFilter
+  - src/local_image_filter.rb
 variables:
+  local_preview: true
   trmnl: {}

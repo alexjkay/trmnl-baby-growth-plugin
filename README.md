@@ -41,6 +41,8 @@ bin/trmnlp lint    # check against TRMNL best practices
 ```
 
 Change the sample due date in `.trmnlp.yml` (`custom_fields.due_date`) to preview other stages.
+During `trmnlp serve`, local SVGs are embedded in the preview and the `images/` folder is watched for changes.
+Published markup continues to use the public GitHub image URLs.
 
 ## Install on your TRMNL
 
