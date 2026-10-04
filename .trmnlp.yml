@@ -1,18 +1,9 @@
-# TRMNLP configuration
-# {{ env.VARIABLE }} interpolation is available here
 ---
-# auto-reload when files change (`watch: false` to disable)
 watch:
-  - .trmnlp.yml
-  - src
-
-# values of custom fields (defined in src/settings.yml)
+- ".trmnlp.yml"
+- src
 custom_fields:
-  due_date: 15/03/2027
-
-# Time zone IANA identifier to inject into trmnl.user
+  due_date: 15/01/2027
 time_zone: Europe/London
-
-# override variables
 variables:
   trmnl: {}

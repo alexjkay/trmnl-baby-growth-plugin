@@ -1,5 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Blueberry">
   <title>Blueberry</title>
+    <style>.detail { fill: none; }</style>
+  <style>svg &gt; g:first-of-type { fill: #e60000; }</style>
   <rect width="128" height="128" fill="#fff"/>
   <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="64" cy="67" r="28"/><path d="m53 43 5 8 6-7 6 7 7-7 2 10-9 5-11-2-9 3Z" fill="#111"/><path d="M52 67q12-11 24 0" fill="none" stroke="#111" stroke-width="3"/></g>
+  <g class="detail">
+    <path d="M46 58q5-9 14-10-5 5-6 11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="76" cy="78" r="2" fill="#ffd500"/>
+    <circle cx="54" cy="81" r="1.8" fill="#ffd500"/>
+  </g>
 </svg>

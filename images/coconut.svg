@@ -1,5 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Coconut">
   <title>Coconut</title>
+    <style>.detail { fill: none; }</style>
+  <style>svg &gt; g:first-of-type { fill: #ffd500; }</style>
   <rect width="128" height="128" fill="#fff"/>
   <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="64" cy="66" r="32"/><path d="M47 47q12-9 21 0m-17 38q12 8 26 0" fill="none" stroke="#111" stroke-width="4"/><circle cx="55" cy="61" r="3" fill="#111"/><circle cx="72" cy="60" r="3" fill="#111"/><circle cx="64" cy="72" r="3" fill="#111"/></g>
+  <g class="detail">
+    <path d="M43 56q5-13 16-16-7 7-8 15" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <path d="M41 76q4 12 13 17m31-1q7-6 9-15" fill="none" stroke="#e60000" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="46" cy="67" r="1.5" fill="#111"/><circle cx="82" cy="51" r="1.5" fill="#111"/>
+  </g>
 </svg>

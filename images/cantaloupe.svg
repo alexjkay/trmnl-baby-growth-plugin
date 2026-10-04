@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Cantaloupe">
   <title>Cantaloupe</title>
+    <style>.detail { fill: none; }</style>
+  <style>svg &gt; g:first-of-type { fill: #ffd500; }</style>
   <rect width="128" height="128" fill="#fff"/>
   <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="64" cy="66" r="33"/><path d="M64 33q-2-10 8-15" fill="none" stroke="#111" stroke-width="4"/><g fill="none" stroke="#111" stroke-width="2"><path d="M35 53q29 20 58 0M34 66q30 18 60 0M39 82q25-16 50 0M49 37q-8 29 0 58m15-62q-5 30 0 66m15-58q-8 29 0 56"/></g></g>
+  <g class="detail">
+    <path d="M42 50q6-9 15-10-6 5-8 12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <path d="M45 88q7 6 14 6m18-1q6-3 9-8" fill="none" stroke="#e60000" stroke-width="2" stroke-linecap="round"/>
+  </g>
 </svg>

@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Papaya">
   <title>Papaya</title>
+    <style>.detail { fill: none; }</style>
+  <style>svg &gt; g:first-of-type { fill: #e60000; }</style>
   <rect width="128" height="128" fill="#fff"/>
   <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M64 30q19 0 23 19 4 21-5 43-7 17-18 17t-18-17q-9-22-5-43 4-19 23-19Z"/><ellipse cx="64" cy="70" rx="10" ry="20" fill="#111"/><g fill="#fff"><ellipse cx="61" cy="58" rx="2" ry="3"/><ellipse cx="67" cy="58" rx="2" ry="3"/><ellipse cx="61" cy="68" rx="2" ry="3"/><ellipse cx="67" cy="68" rx="2" ry="3"/><ellipse cx="64" cy="79" rx="2" ry="3"/></g></g>
+  <g class="detail">
+    <path d="M45 48q5-9 13-10-5 7-5 13" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="61" cy="59" rx="1.5" ry="2" fill="#ffd500"/><ellipse cx="67" cy="67" rx="1.5" ry="2" fill="#ffd500"/><ellipse cx="61" cy="76" rx="1.5" ry="2" fill="#ffd500"/>
+  </g>
 </svg>

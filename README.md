@@ -24,7 +24,7 @@ in your TRMNL account's time zone. Sizes are typical averages and are for fun, n
 .trmnlp.yml               # local preview config (sample due date)
 src/settings.yml          # plugin definition, including the "Due date" custom field
 src/shared.liquid         # date parsing, countdown and week-by-week size table
-images/                   # monochrome SVG illustrations for the size table
+images/                   # four-color 2-bit SVG illustrations for the size table
 src/full.liquid           # full-screen layout
 src/half_horizontal.liquid
 src/half_vertical.liquid

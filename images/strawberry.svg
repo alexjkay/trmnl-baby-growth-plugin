@@ -1,5 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Strawberry">
   <title>Strawberry</title>
+    <style>.detail { fill: none; }</style>
+  <style>svg &gt; g:first-of-type { fill: #e60000; }</style>
   <rect width="128" height="128" fill="#fff"/>
   <g fill="#fff" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M43 49q21 7 42 0 4 24-21 45Q39 75 43 49Z"/><path d="M64 50q-15-17-24-8 10 2 15 10m9-2q13-19 24-10-10 3-16 12"/><g fill="#111"><ellipse cx="52" cy="61" rx="2" ry="3"/><ellipse cx="68" cy="61" rx="2" ry="3"/><ellipse cx="59" cy="72" rx="2" ry="3"/><ellipse cx="75" cy="74" rx="2" ry="3"/><ellipse cx="54" cy="82" rx="2" ry="3"/></g></g>
+  <g class="detail">
+    <path d="M47 50q-8-13-17-9 8 4 13 12m21-3q12-17 22-9-9 3-14 11" fill="none" stroke="#ffd500" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="49" cy="61" rx="1.4" ry="2" fill="#fff"/><ellipse cx="65" cy="65" rx="1.4" ry="2" fill="#fff"/>
+    <ellipse cx="72" cy="77" rx="1.4" ry="2" fill="#fff"/><ellipse cx="57" cy="82" rx="1.4" ry="2" fill="#fff"/>
+    <path d="M48 57q4-4 7-3" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </g>
 </svg>
