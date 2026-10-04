@@ -24,7 +24,7 @@ in your TRMNL account's time zone. Sizes are typical averages and are for fun, n
 .trmnlp.yml               # local preview config (sample due date)
 src/settings.yml          # plugin definition, including the "Due date" custom field
 src/shared.liquid         # date parsing, countdown and week-by-week size table
-images/                   # four-color 2-bit SVG illustrations for the size table
+images/                   # four-shade grayscale cartoon PNGs for the size table
 src/full.liquid           # full-screen layout
 src/half_horizontal.liquid
 src/half_vertical.liquid
@@ -41,8 +41,8 @@ bin/trmnlp lint    # check against TRMNL best practices
 ```
 
 Change the sample due date in `.trmnlp.yml` (`custom_fields.due_date`) to preview other stages.
-During `trmnlp serve`, local SVGs are embedded in the preview and the `images/` folder is watched for changes.
-Published markup continues to use the public GitHub image URLs.
+During `trmnlp serve`, local PNGs are embedded in the preview and the `images/` folder is watched for changes.
+Published markup continues to use the public GitHub PNG URLs.
 
 ## Install on your TRMNL
 
@@ -56,7 +56,7 @@ After the first push, run `bin/trmnlp pull` so `src/settings.yml` records the pl
 instead of creating a new plugin.
 
 The illustrations are loaded from this repository's `main` branch using raw GitHub URLs, so the repository must be
-public for TRMNL to fetch them. Each displayed illustration also links directly to its SVG file.
+public for TRMNL to fetch them. Each displayed illustration also links directly to its PNG file.
 
 Alternatively, create a Private Plugin in the TRMNL web UI and paste the contents of `src/shared.liquid` into the
 Shared markup tab, each layout file into its tab, and import the custom field from `src/settings.yml`.
