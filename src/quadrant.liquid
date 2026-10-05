@@ -1,24 +1,24 @@
-<div class="layout layout--col layout--center" style="gap: 6px;">
+<div class="layout layout--col layout--center gap--xsmall">
   {% if date_valid == false %}
     <span class="title">Set your due date</span>
     <span class="description">DD/MM/YYYY</span>
   {% elsif status == "born" %}
     <span class="value">Baby has arrived!</span>
   {% else %}
-    <div class="columns" style="width: 100%; align-items: stretch;">
-      <div class="column" style="align-items: center; justify-content: center; text-align: center; gap: 4px;">
-        <span class="value" style="font-size: 18px; line-height: 20px; white-space: normal;">{{ size_object | capitalize }}</span>
+    <div class="columns w--full">
+      <div class="column flex flex--col flex--center gap--xsmall text--center">
+        <span class="value text--base">{{ size_object | capitalize }}</span>
         {% if size_image_url != "" %}
           <a href="{{ size_image_url }}"><img src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="56" height="56"></a>
         {% endif %}
         <span class="description">{{ size_length }} - {{ size_weight }}</span>
       </div>
-      <div class="column" style="align-items: center; justify-content: center; text-align: center; gap: 6px;">
-        <span class="value value--tnums" style="font-size: 64px; line-height: 1;">{{ count_value }}</span>
-        <span class="label" style="font-size: 16px; line-height: 20px;">{{ count_label }}</span>
+      <div class="column flex flex--col flex--center gap--xsmall text--center">
+        <span class="value value--tnums text--xxxlarge">{{ count_value }}</span>
+        <span class="label text--base">{{ count_label }}</span>
       </div>
     </div>
-    <div class="progress-bar" style="width: 100%;">
+    <div class="progress-bar progress-bar--xsmall w--full">
       <div class="content">
         <span class="label label--small">Pregnancy progress</span>
         <span class="label label--small">{{ progress_pct }}%</span>

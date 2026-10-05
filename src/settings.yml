@@ -39,9 +39,14 @@ custom_fields:
   placeholder: DD/MM/YYYY
 - keyname: person_name
   field_type: string
-  name: Person's name
-  description: Optional name for the title. Leave blank to use Baby Growth.
+  name: Parent's name
+  description: Enter the name of the parent. Leave blank to use Baby Growth.
   placeholder: Name
+- keyname: author_bio
+  field_type: author_bio
+  name: About This Plugin
+  description: >-
+    Baby Growth turns a due date into a glanceable daily update for a TRMNL display. It shows the days remaining, pregnancy week and trimester, estimated length and weight, a progress bar, and an illustrated everyday object representing the baby's approximate size. Four layouts support full, half-horizontal, half-vertical, and quadrant screens. All calculations run in Liquid using a 280-day pregnancy timeline; the plugin does not call a server or external data API. Size estimates are general averages for fun and are not medical advice. Configure a due date and optional parent's name, then add the plugin to your playlist.
 name: Baby Growth
 description: Daily baby size and due countdown
 refresh_interval: 360
