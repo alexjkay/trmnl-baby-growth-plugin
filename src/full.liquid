@@ -12,25 +12,25 @@
         <span class="description">Your baby is the size of {{ size_article }}</span>
         <span class="value value--large w--full text--center">{{ size_object | capitalize }}</span>
         {% if size_image_url != "" %}
-          <a href="{{ size_image_url }}" class="self--center"><img src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="96" height="96"></a>
+          <a href="{{ size_image_url }}" class="self--center"><img class="image image-dither" src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="96" height="96"></a>
         {% endif %}
         <div class="grid grid--cols-2 w--full text--center">
           <div class="item">
             <div class="content flex flex--col flex--center-x w--full">
-              <span class="value value--small">{{ size_length }}</span>
-              <span class="label label--small">Length</span>
+              <span class="value">{{ size_length }}</span>
+              <span class="label">Length</span>
             </div>
           </div>
           <div class="item">
             <div class="content flex flex--col flex--center-x w--full">
-              <span class="value value--small">{{ size_weight }}</span>
-              <span class="label label--small">Weight</span>
+              <span class="value">{{ size_weight }}</span>
+              <span class="label">Weight</span>
             </div>
           </div>
         </div>
       </div>
       <div class="column flex flex--col flex--center gap--[12px] text--center">
-        <span class="value value--tnums text--peta">{{ count_value }}</span>
+        <span class="value value--tnums text--peta portrait:text--giga">{{ count_value }}</span>
         <span class="label text--xlarge">{{ count_label }}</span>
         {% if status == "pregnant" or status == "early" %}
           <span class="description text--base">{{ weeks_left }} {{ weeks_word }}, {{ days_rem }} {{ days_word }}</span>
