@@ -9,20 +9,22 @@
     <span class="description">Size of {{ size_article }}</span>
     <span class="value w--full text--xlarge">{{ size_object | capitalize }}</span>
     {% if size_image_url != "" %}
-      <a href="{{ size_image_url }}" class="self--center"><img class="image image-dither" src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="80" height="80"></a>
+      <img class="image image-dither self--center" src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="80" height="80">
     {% endif %}
     <span class="description">{{ size_length }} - {{ size_weight }}</span>
     <span class="value value--tnums text--tera portrait:text--giga">{{ count_value }}</span>
     <span class="label text--xlarge">{{ count_label }}</span>
-    <div class="progress-bar progress-bar--small w--full">
-      <div class="content">
-        <span class="label">Pregnancy progress</span>
-        <span class="label">{{ progress_pct }}%</span>
-      </div>
-      <div class="track">
-        <div class="fill" style="width: {{ progress_pct }}%"></div>
-      </div>
+    <div class="flex flex--row flex--between w--full">
+      <span class="label">Pregnancy progress</span>
+      <span class="label">{{ progress_pct }}%</span>
     </div>
+    {% if local_preview %}
+      <div class="progress-bar progress-bar--small w--full">
+        <div class="track"><div class="fill" style="width: {{ progress_pct }}%"></div></div>
+      </div>
+    {% else %}
+      <div class="progress-bar progress-bar--small w--full" data-progress="{{ progress_pct }}"></div>
+    {% endif %}
   {% endif %}
 </div>
 

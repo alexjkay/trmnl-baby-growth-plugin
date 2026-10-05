@@ -12,16 +12,18 @@
         <span class="description">Your baby is the size of {{ size_article }}</span>
         <span class="value value--large w--full text--center">{{ size_object | capitalize }}</span>
         {% if size_image_url != "" %}
-          <a href="{{ size_image_url }}" class="self--center"><img class="image image-dither" src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="96" height="96"></a>
+          <img class="image image-dither self--center" src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="96" height="96">
         {% endif %}
         <div class="grid grid--cols-2 w--full text--center">
           <div class="item">
+            <div class="meta"></div>
             <div class="content flex flex--col flex--center-x w--full">
               <span class="value">{{ size_length }}</span>
               <span class="label">Length</span>
             </div>
           </div>
           <div class="item">
+            <div class="meta"></div>
             <div class="content flex flex--col flex--center-x w--full">
               <span class="value">{{ size_weight }}</span>
               <span class="label">Weight</span>
@@ -38,15 +40,17 @@
         <span class="description text--base">Due {{ due_label }}</span>
       </div>
     </div>
-    <div class="progress-bar w--full">
-      <div class="content">
-        <span class="label">Pregnancy progress</span>
-        <span class="label">{{ progress_pct }}%</span>
-      </div>
-      <div class="track">
-        <div class="fill" style="width: {{ progress_pct }}%"></div>
-      </div>
+    <div class="flex flex--row flex--between w--full">
+      <span class="label">Pregnancy progress</span>
+      <span class="label">{{ progress_pct }}%</span>
     </div>
+    {% if local_preview %}
+      <div class="progress-bar w--full">
+        <div class="track"><div class="fill" style="width: {{ progress_pct }}%"></div></div>
+      </div>
+    {% else %}
+      <div class="progress-bar w--full" data-progress="{{ progress_pct }}"></div>
+    {% endif %}
   {% endif %}
 </div>
 
