@@ -30,6 +30,6 @@ jobs:
       - uses: actions/checkout@v7
       - run: pip install yamllint
       - run: yamllint .
-      - uses: DavidAnson/markdownlint-cli2-action@v20
+      - uses: DavidAnson/markdownlint-cli2-action@v24
         with:
           globs: "**/*.md"
