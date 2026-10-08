@@ -7,9 +7,5 @@ custom_fields:
   due_date: '08/06/2027'
   person_name: Becky
 time_zone: Europe/London
-custom_filters:
-- - LocalImageFilter
-  - src/local_image_filter.rb
 variables:
-  local_preview: true
   trmnl: {}
