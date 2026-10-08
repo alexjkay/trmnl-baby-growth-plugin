@@ -17,3 +17,19 @@ jobs:
           ruby-version: "4.0"
       - run: gem install trmnl_preview
       - run: trmnlp lint
+
+  images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 scripts/check_images.py
+
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: pip install yamllint
+      - run: yamllint .
+      - uses: DavidAnson/markdownlint-cli2-action@v20
+        with:
+          globs: "**/*.md"
