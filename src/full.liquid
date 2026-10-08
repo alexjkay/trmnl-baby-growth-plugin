@@ -6,11 +6,11 @@
     <span class="value value--xlarge">Baby has arrived!</span>
     <span class="description">Congratulations - the due date was {{ due_label }}.</span>
   {% else %}
-    <div class="columns w--full grow">
-      <div class="column flex flex--col flex--center-x flex--evenly self--stretch">
+    <div class="grid grid--cols-2 w--full grow">
+      <div class="flex flex--col flex--center-x flex--evenly self--stretch">
         <span class="label lg:text--large">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %} - {{ trimester }}{% endif %}</span>
         <span class="description lg:text--large">Your baby is the size of {{ size_article }}</span>
-        <span class="value value--large lg:value--xlarge w--full text--center">{{ size_object | capitalize }}</span>
+        <span class="value value--large w--full text--center">{{ size_object | capitalize }}</span>
         {% if size_image_url != "" %}
           <img class="image image-dither self--center w--24 h--24 lg:w--40 lg:h--40" src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="96" height="96">
         {% endif %}
@@ -31,8 +31,8 @@
           </div>
         </div>
       </div>
-      <div class="column flex flex--col flex--center-x text--center h--full flex--evenly self--stretch">
-        <span class="value value--tnums text--peta portrait:text--giga">{{ count_value }}</span>
+      <div class="flex flex--col flex--center-x text--center h--full flex--evenly self--stretch">
+        <span class="value value--tnums value--xxxlarge portrait:value--xxlarge">{{ count_value }}</span>
         <span class="label text--xlarge">{{ count_label }}</span>
         {% if status == "pregnant" or status == "early" %}
           <span class="description text--base lg:text--large">{{ weeks_left }} {{ weeks_word }}, {{ days_rem }} {{ days_word }}</span>

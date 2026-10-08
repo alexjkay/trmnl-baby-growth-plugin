@@ -8,12 +8,12 @@
     <div class="flex flex--col flex--center-x flex--evenly self--stretch grow">
       <span class="label lg:text--large">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %}{% endif %}</span>
       <span class="description lg:text--large">Size of {{ size_article }}</span>
-      <span class="value w--full text--xlarge lg:text--xxlarge">{{ size_object | capitalize }}</span>
+      <span class="value w--full value--small lg:value--base">{{ size_object | capitalize }}</span>
       {% if size_image_url != "" %}
         <img class="image image-dither self--center w--20 h--20 lg:w--32 lg:h--32" src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="80" height="80">
       {% endif %}
       <span class="description lg:text--large">{{ size_length }} - {{ size_weight }}</span>
-      <span class="value value--tnums text--tera lg:text--peta portrait:text--giga">{{ count_value }}</span>
+      <span class="value value--tnums value--xxxlarge portrait:value--xxlarge">{{ count_value }}</span>
       <span class="label text--xlarge lg:text--xxlarge">{{ count_label }}</span>
     </div>
     <div class="flex flex--col flex--evenly w--full">

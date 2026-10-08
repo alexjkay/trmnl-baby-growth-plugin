@@ -22,6 +22,9 @@ All calculations happen in Liquid (`src/shared.liquid`) using a 280-day (40-week
 so no server or API is needed — the plugin uses the `static` strategy and refreshes hourly so it rolls over each day
 in your TRMNL account's time zone. Sizes are typical averages and are for fun, not medical advice.
 
+The size illustrations are loaded from this repository via `raw.githubusercontent.com`, so the TRMNL servers need to reach GitHub when rendering.
+If GitHub is unreachable or the repository is moved or renamed, the image may not display, but the rest of the screen still shows.
+
 ## Project structure
 
 ```
