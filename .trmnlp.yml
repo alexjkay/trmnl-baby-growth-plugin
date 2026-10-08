@@ -4,7 +4,7 @@ watch:
 - src
 - images
 custom_fields:
-  due_date: '08/02/2027'
+  due_date: '08/06/2027'
   person_name: Becky
 time_zone: Europe/London
 custom_filters:

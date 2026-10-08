@@ -1,4 +1,4 @@
-<div class="layout layout--col layout--center gap--large">
+<div class="layout layout--col layout--center gap--large" style="justify-content: space-evenly;">
   {% if date_valid == false %}
     <span class="title">Set your due date</span>
     <span class="description">Enter it as DD/MM/YYYY in the plugin settings.</span>
@@ -6,13 +6,13 @@
     <span class="value value--xlarge">Baby has arrived!</span>
     <span class="description">Congratulations - the due date was {{ due_label }}.</span>
   {% else %}
-    <div class="columns">
-      <div class="column">
-        <span class="label">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %} - {{ trimester }}{% endif %}</span>
-        <span class="description">Your baby is the size of {{ size_article }}</span>
-        <span class="value value--large w--full text--center">{{ size_object | capitalize }}</span>
+    <div class="columns w--full" style="flex: 1 1 auto; align-items: stretch;">
+      <div class="column flex flex--col flex--center" style="justify-content: space-evenly; align-self: stretch;">
+        <span class="label lg:text--large">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %} - {{ trimester }}{% endif %}</span>
+        <span class="description lg:text--large">Your baby is the size of {{ size_article }}</span>
+        <span class="value value--large lg:value--xlarge w--full text--center">{{ size_object | capitalize }}</span>
         {% if size_image_url != "" %}
-          <img class="image image-dither self--center" src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="96" height="96">
+          <img class="image image-dither self--center w--[96px] h--[96px] lg:w--[160px] lg:h--[160px]" src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="96" height="96">
         {% endif %}
         <div class="grid grid--cols-2 w--full text--center">
           <div class="item">
@@ -31,13 +31,13 @@
           </div>
         </div>
       </div>
-      <div class="column flex flex--col flex--center gap--[12px] text--center">
+      <div class="column flex flex--col flex--center text--center h--full" style="justify-content: space-evenly; align-self: stretch;">
         <span class="value value--tnums text--peta portrait:text--giga">{{ count_value }}</span>
         <span class="label text--xlarge">{{ count_label }}</span>
         {% if status == "pregnant" or status == "early" %}
-          <span class="description text--base">{{ weeks_left }} {{ weeks_word }}, {{ days_rem }} {{ days_word }}</span>
+          <span class="description text--base lg:text--large">{{ weeks_left }} {{ weeks_word }}, {{ days_rem }} {{ days_word }}</span>
         {% endif %}
-        <span class="description text--base">Due {{ due_label }}</span>
+        <span class="description text--base lg:text--large">Due {{ due_label }}</span>
       </div>
     </div>
     <div class="flex flex--row flex--between w--full">
