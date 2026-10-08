@@ -22,13 +22,9 @@
       <span class="label">Pregnancy progress</span>
       <span class="label">{{ progress_pct }}%</span>
     </div>
-    {% if local_preview %}
-      <div class="progress-bar progress-bar--xsmall w--full">
-        <div class="track"><div class="fill" style="width: {{ progress_pct }}%"></div></div>
-      </div>
-    {% else %}
-      <div class="progress-bar progress-bar--xsmall w--full" data-progress="{{ progress_pct }}"></div>
-    {% endif %}
+    <div class="progress-bar progress-bar--xsmall w--full">
+      <div class="track"><div class="fill" style="width: {{ progress_pct }}%"></div></div>
+    </div>
   {% endif %}
 </div>
 
