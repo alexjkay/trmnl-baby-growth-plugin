@@ -27,7 +27,7 @@ If GitHub is unreachable or the repository is moved or renamed, the image may no
 
 ## Project structure
 
-```
+```text
 .trmnlp.yml               # local preview config (sample due date)
 src/settings.yml          # plugin definition, including the "Due date" custom field
 src/shared.liquid         # date parsing, countdown and week-by-week size table
