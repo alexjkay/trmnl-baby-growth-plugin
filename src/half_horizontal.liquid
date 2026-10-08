@@ -1,6 +1,7 @@
 <div class="layout layout--col layout--center-x flex--evenly">
   {% if date_valid == false %}
-    <span class="title">Set your due date (DD/MM/YYYY)</span>
+    <span class="title">Set your due date</span>
+    <span class="label label--small">DD/MM/YYYY format required</span>
   {% elsif status == "born" %}
     <span class="value value--large">Baby has arrived!</span>
   {% else %}
