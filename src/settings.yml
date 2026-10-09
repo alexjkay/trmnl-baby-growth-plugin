@@ -8,8 +8,8 @@ framework_version: latest
 serverless_language: ''
 refresh_interval_floor: ''
 polling_url: ''
-polling_headers:
-polling_body:
+polling_headers: ''
+polling_body: ''
 id: 496375
 oauth_enabled: 'false'
 oauth_pkce_enabled: 'no'
