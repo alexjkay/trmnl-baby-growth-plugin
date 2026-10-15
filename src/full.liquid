@@ -9,9 +9,9 @@
   {% else %}
     <div class="grid grid--cols-2 w--full grow">
       <div class="flex flex--col flex--center-x flex--evenly self--stretch">
-        <span class="label lg:text--large">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %} - {{ trimester }}{% endif %}</span>
-        <span class="description lg:text--large">Your baby is the size of {{ size_article }}</span>
-        <span class="value value--large w--full text--center">{{ size_object | capitalize }}</span>
+        <span class="label lg:text--xlarge">{% if status == "early" %}Before week 1{% else %}Week {{ preg_week }}{% if preg_day > 0 %} + {{ preg_day }}d{% endif %} - {{ trimester }}{% endif %}</span>
+        <span class="description lg:text--xlarge">Your baby is the size of {{ size_article }}</span>
+        <span class="value value--xlarge w--full text--center">{{ size_object | capitalize }}</span>
         {% if size_image_url != "" %}
           <img class="image image-dither self--center w--24 h--24 lg:w--40 lg:h--40" src="{{ size_image_url }}" alt="{{ size_object | capitalize }}" width="96" height="96">
         {% endif %}
@@ -19,26 +19,26 @@
           <div class="item">
             <div class="meta"></div>
             <div class="content flex flex--col flex--center-x w--full">
-              <span class="value">{{ size_length }}</span>
-              <span class="label">Length</span>
+              <span class="value lg:value--large">{{ size_length }}</span>
+              <span class="label lg:label--large">Length</span>
             </div>
           </div>
           <div class="item">
             <div class="meta"></div>
             <div class="content flex flex--col flex--center-x w--full">
-              <span class="value">{{ size_weight }}</span>
-              <span class="label">Weight</span>
+              <span class="value lg:value--large">{{ size_weight }}</span>
+              <span class="label lg:label--large">Weight</span>
             </div>
           </div>
         </div>
       </div>
       <div class="flex flex--col flex--center-x text--center h--full flex--evenly self--stretch">
-        <span class="value value--tnums value--xxxlarge portrait:value--xxlarge">{{ count_value }}</span>
-        <span class="label text--xlarge">{{ count_label }}</span>
+        <span class="value value--tnums value--mega portrait:value--xxxlarge">{{ count_value }}</span>
+        <span class="label text--xxlarge">{{ count_label }}</span>
         {% if status == "pregnant" or status == "early" %}
-          <span class="description text--base lg:text--large">{{ weeks_left }} {{ weeks_word }}, {{ days_rem }} {{ days_word }}</span>
+          <span class="description text--base lg:text--xlarge">{{ weeks_left }} {{ weeks_word }}, {{ days_rem }} {{ days_word }}</span>
         {% endif %}
-        <span class="description text--base lg:text--large">Due {{ due_label }}</span>
+        <span class="description text--base lg:text--xxlarge">Due {{ due_label }}</span>
       </div>
     </div>
     <div class="flex flex--row flex--between w--full">
