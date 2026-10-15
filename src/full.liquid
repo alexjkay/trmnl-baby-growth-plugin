@@ -1,8 +1,7 @@
 <div class="layout layout--col layout--center-x gap--large flex--evenly">
   {% if date_valid == false %}
-    <span class="title">Set your due date</span>
-    <span class="label label--small">DD/MM/YYYY format required</span>
-    <span class="description">Enter it as DD/MM/YYYY in the plugin settings.</span>
+    <span class="title">Select your due date</span>
+    <span class="description">Choose a due date in the plugin settings.</span>
   {% elsif status == "born" %}
     <span class="value value--xlarge">Baby has arrived!</span>
     <span class="description">Congratulations - the due date was {{ due_label }}.</span>
