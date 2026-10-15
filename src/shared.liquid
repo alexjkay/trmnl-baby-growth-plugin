@@ -1,7 +1,7 @@
 {% comment %}
   Baby growth calculations shared by every layout.
 
-  Input:  trmnl.plugin_settings.custom_fields_values.due_date (DD/MM/YYYY)
+  Input:  trmnl.plugin_settings.custom_fields_values.due_date (date)
   Output: date_valid, status (early | pregnant | due | overdue | born),
           days_left, weeks_left, days_rem, weeks_word, days_word, preg_week, preg_day, trimester,
           progress_pct, due_label, count_value, count_label, size_article,
@@ -21,28 +21,28 @@
 {% assign today_iso = 0 | days_ago: tz | date: "%Y-%m-%d" %}
 {% assign today_s = today_iso | date: "%s" | plus: 0 %}
 
-{% assign due_raw = trmnl.plugin_settings.custom_fields_values.due_date | default: "" | strip | replace: "-", "/" | replace: ".", "/" %}
-{% assign due_parts = due_raw | split: "/" %}
+{% assign due_raw = trmnl.plugin_settings.custom_fields_values.due_date | default: "" | strip %}
 {% assign date_valid = false %}
 
-{% if due_parts.size == 3 %}
-  {% assign due_d = due_parts[0] | strip | plus: 0 %}
-  {% assign due_m = due_parts[1] | strip | plus: 0 %}
-  {% assign due_y = due_parts[2] | strip | plus: 0 %}
-  {% if due_d >= 1 and due_d <= 31 and due_m >= 1 and due_m <= 12 and due_y >= 2000 and due_y <= 2100 %}
-    {% capture due_iso %}{{ due_y }}-{{ due_m }}-{{ due_d }}{% endcapture %}
-    {% comment %} Round-trip the date so impossible dates such as 31/02 are rejected {% endcomment %}
-    {% assign due_check = due_iso | date: "%-d/%-m/%Y" %}
-    {% capture due_expected %}{{ due_d }}/{{ due_m }}/{{ due_y }}{% endcapture %}
-    {% if due_check == due_expected %}
-      {% assign date_valid = true %}
+{% if due_raw != "" %}
+  {% assign due_iso = due_raw | date: "%Y-%m-%d" %}
+  {% assign due_parts = due_iso | split: "-" %}
+  {% if due_parts.size == 3 %}
+    {% assign due_y = due_parts[0] | plus: 0 %}
+    {% assign due_m = due_parts[1] | plus: 0 %}
+    {% assign due_d = due_parts[2] | plus: 0 %}
+    {% if due_raw == due_iso and due_d >= 1 and due_d <= 31 and due_m >= 1 and due_m <= 12 and due_y >= 2000 and due_y <= 2100 %}
+      {% assign due_check = due_iso | date: "%Y-%m-%d" %}
+      {% if due_check == due_iso %}
+        {% assign date_valid = true %}
+      {% endif %}
     {% endif %}
   {% endif %}
 {% endif %}
 
 {% if date_valid %}
   {% assign due_s = due_iso | date: "%s" | plus: 0 %}
-  {% assign due_label = due_iso | date: "%-d %B %Y" %}
+  {% assign due_label = due_iso | date: "%d/%m/%Y" %}
 
   {% comment %} Adding 12 hours before dividing absorbs daylight-saving shifts {% endcomment %}
   {% assign days_left = due_s | minus: today_s | plus: 43200 | divided_by: 86400 %}

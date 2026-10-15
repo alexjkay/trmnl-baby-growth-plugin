@@ -2,7 +2,7 @@
 
 Show the size of a baby each day as a plugin for [TRMNL](https://trmnl.com) devices.
 
-Enter your due date (`DD/MM/YYYY`) and the screen shows, every day until the baby is born:
+Select your due date and the screen shows, every day until the baby is born:
 
 - a countdown of days (and weeks + days) until the due date
 - the current pregnancy week, day and trimester
@@ -57,7 +57,7 @@ bin/trmnlp login   # paste your TRMNL API key
 bin/trmnlp push    # creates the private plugin
 ```
 
-Then open the plugin in TRMNL, set **Due date** (e.g. `15/03/2027`) and add it to your playlist.
+Then open the plugin in TRMNL, select **Due date** and add it to your playlist.
 After the first push, run `bin/trmnlp pull` so `src/settings.yml` records the plugin `id` and later pushes update it
 instead of creating a new plugin.
 

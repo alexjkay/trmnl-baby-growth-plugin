@@ -33,11 +33,9 @@ oauth_expiry_strategy: ''
 oauth_fixed_expiry_ms: ''
 custom_fields:
 - keyname: due_date
-  field_type: string
+  field_type: date
   name: Due date
-  description: Your due date in DD/MM/YYYY format, e.g. 15/03/2027
-  placeholder: DD/MM/YYYY
-  help_text: 'Format: DD/MM/YYYY. For example, 15/03/2027.'
+  description: Choose your baby's due date.
 - keyname: person_name
   field_type: string
   name: Parent's name
