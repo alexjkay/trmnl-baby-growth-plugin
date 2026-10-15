@@ -31,10 +31,10 @@
     {% assign due_y = due_parts[0] | plus: 0 %}
     {% assign due_m = due_parts[1] | plus: 0 %}
     {% assign due_d = due_parts[2] | plus: 0 %}
-  {% if due_d >= 1 and due_d <= 31 and due_m >= 1 and due_m <= 12 and due_y >= 2000 and due_y <= 2100 %}
+    {% if due_raw == due_iso and due_d >= 1 and due_d <= 31 and due_m >= 1 and due_m <= 12 and due_y >= 2000 and due_y <= 2100 %}
       {% assign due_check = due_iso | date: "%Y-%m-%d" %}
       {% if due_check == due_iso %}
-      {% assign date_valid = true %}
+        {% assign date_valid = true %}
       {% endif %}
     {% endif %}
   {% endif %}
